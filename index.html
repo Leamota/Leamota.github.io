@@ -22,10 +22,11 @@
       line-height: 1.6;
     }
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 24px 16px 48px;
     }
+
     /* Top navigation */
     nav {
       display: flex;
@@ -38,54 +39,65 @@
       color: var(--muted);
       text-decoration: none;
     }
-    nav a:hover {
-      color: var(--accent);
-    }
+    nav a:hover { color: var(--accent); }
     nav a.active {
       color: var(--accent);
       font-weight: 600;
     }
 
-    /* Header with photo + text */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 24px;
+    /* Two-column layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
     }
-    .hero-photo {
-      flex: 0 0 150px;
+
+    /* Sidebar: picture + bio */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      text-align: center;
     }
-    .hero-photo img {
-      width: 150px;
-      height: 150px;
+    .sidebar img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #e0e0e0;
+      margin-bottom: 12px;
     }
-    .hero-text {
-      flex: 1;
-      min-width: 240px;
-    }
-    .hero-text h1 {
+    .sidebar h1 {
       margin: 0 0 4px;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
-    .hero-text p {
-      margin: 0;
+    .sidebar p {
+      margin: 2px 0;
+      font-size: 0.95rem;
       color: var(--muted);
     }
+    .sidebar-links {
+      margin-top: 10px;
+      font-size: 0.92rem;
+    }
+    .sidebar-links a {
+      display: block;
+      color: var(--accent);
+      text-decoration: none;
+      margin: 2px 0;
+    }
+    .sidebar-links a:hover {
+      text-decoration: underline;
+    }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .section {
+    /* Main content */
+    .main .section {
       background: var(--card-bg);
       border-radius: 8px;
       padding: 20px 20px 8px;
       margin-bottom: 16px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
     .section-title {
       font-weight: 600;
@@ -102,14 +114,15 @@
       color: var(--muted);
     }
 
-    @media (max-width: 600px) {
-      .container { padding-top: 16px; }
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
       }
-      .hero-photo {
-        align-self: center;
+      .sidebar {
+        text-align: center;
       }
     }
   </style>
@@ -125,58 +138,66 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Hero with picture + basic info -->
-    <section class="hero">
-      <div class="hero-photo">
-        <!-- Replace profile.jpg with your actual image file -->
-        <img src="leacv.jpeg" alt="Lawrence ">
-      </div>
-      <div class="hero-text">
-        <h1>Lawrence A. Egharevba</h1>
-        <p>M.S. Artificial Intelligence · M.S. Telecommunications & Networking</p>
-        <p>
-          <a href="mailto:asemotalea@gmail.com">you@example.com</a> ·
-          <a href="https://github.com/Leamota">GitHub</a> ·
-          <a href="https://leamota.github.io">Website</a>
-        </p>
-      </div>
-    </section>
+    <div class="layout">
+      <!-- Sidebar: picture + short bio -->
+      <aside class="sidebar">
+        <!-- Replace profile.jpg with your file -->
+        <img src="leacv.jpg" alt="Lawrence">
+        <h1>Lawrence Asemota Egharevba</h1>
+        <p>M.S. Artificial Intelligence</p>
+        <p>M.S. Telecommunications & Networking</p>
+        <p>Machine Learning · Computer Vision · Learning Analytics</p>
+        <div class="sidebar-links">
+          <a href="mailto:asemotalea@gmail.com">asemotalea@gmail.com</a>
+          <a href="https://github.com/Leamota">GitHub</a>
+          <a href="https://leaamota.github.io">Website</a>
+          <!-- Add Google Scholar, CV PDF, etc. if you want -->
+        </div>
+      </aside>
 
-    <!-- About -->
-    <section class="section">
-      <div class="section-title">About</div>
-      <p>
-        Hi! I am [Lawrence Asemota Egharevba], a [PhD applicant / ML engineer / M.S. AI graduate] with a background in
-        Telecommunications and Networking and Artificial Intelligence. My interests include machine
-        learning, computer vision, learning analytics, and AI for intelligent networks.
-      </p>
-    </section>
+      <!-- Main content -->
+      <main class="main">
+        <section class="section">
+          <div class="section-title">About</div>
+          <p>
+             I am  a [PhD applicant / ML engineer / M.S. AI graduate] with a background in
+            Telecommunications and Networking and Artificial Intelligence. My interests include machine learning,
+            computer vision, learning analytics, and AI for intelligent networks and student success prediction.
+          </p>
+        </section>
 
-    <!-- Highlights / bullets -->
-    <section class="section">
-      <div class="section-title">Highlights</div>
+        <section class="section">
+          <div class="section-title">Highlights</div>
 
-      <div class="bullet-block">
-        <span class="bullet-prefix">▷</span>
-        Completed an M.S. in Artificial Intelligence with strong performance in Computer Vision, NLP,
-        AI & ML in Production, Data Mining and Machine Learning, and Social Networks/Big Data Analytics.
-        <div class="tag-list">AI · Machine Learning · NLP · Computer Vision · Big Data</div>
-      </div>
+          <div class="bullet-block">
+            <span class="bullet-prefix">▷</span>
+            Completed an M.S. in Artificial Intelligence with strong performance in Computer Vision, NLP,
+            AI & ML in Production, Data Mining and Machine Learning, and Social Networks/Big Data Analytics.
+            <div class="tag-list">AI · Machine Learning · NLP · Computer Vision · Big Data</div>
+          </div>
 
-      <div class="bullet-block">
-        <span class="bullet-prefix">▷</span>
-        Earned an M.S. in Telecommunications and Networking, providing a solid foundation in network
-        protocols, wireless systems, and network security.
-        <div class="tag-list">Telecommunications · Networking · Network Security</div>
-      </div>
+          <div class="bullet-block">
+            <span class="bullet-prefix">▷</span>
+            Earned an M.S. in Telecommunications and Networking, providing a solid foundation in network protocols,
+            wireless systems, and network security that complements my AI skills.
+            <div class="tag-list">Telecommunications · Networking · Network Security</div>
+          </div>
 
-      <div class="bullet-block">
-        <span class="bullet-prefix">▷</span>
-        Project and research experience in student performance prediction, social network analytics,
-        and applied ML for real-world data.
-        <div class="tag-list">Learning Analytics · Data Mining · Predictive Modeling</div>
-      </div>
-    </section>
+          <div class="bullet-block">
+            <span class="bullet-prefix">▷</span>
+            Research and project work on learning analytics and next-term prediction of student performance using
+            feature engineering and machine learning models.
+            <div class="tag-list">Learning Analytics · Feature Engineering · Classification</div>
+          </div>
+
+          <div class="bullet-block">
+            <span class="bullet-prefix">▷</span>
+            Experienced with Python, PyTorch, data pipelines, and deploying models in production-style environments.
+            <div class="tag-list">Python · PyTorch · Data Science · MLOps</div>
+          </div>
+        </section>
+      </main>
+    </div>
   </div>
 </body>
 </html>
