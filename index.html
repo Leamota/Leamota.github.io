@@ -1,4 +1,3 @@
-xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,48 +13,72 @@ xml
       --muted: #666666;
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-main);
       line-height: 1.6;
     }
-
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 32px 16px 48px;
+      padding: 24px 16px 48px;
+    }
+    /* Top navigation */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    nav a.active {
+      color: var(--accent);
+      font-weight: 600;
     }
 
-    header {
-      margin-bottom: 32px;
+    /* Header with photo + text */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 24px;
     }
-
-    header h1 {
+    .hero-photo {
+      flex: 0 0 150px;
+    }
+    .hero-photo img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e0e0e0;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 240px;
+    }
+    .hero-text h1 {
       margin: 0 0 4px;
       font-size: 2rem;
     }
-
-    header p {
+    .hero-text p {
       margin: 0;
       color: var(--muted);
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .section {
       background: var(--card-bg);
@@ -64,154 +87,95 @@ xml
       margin-bottom: 16px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     }
-
     .section-title {
       font-weight: 600;
       margin-bottom: 8px;
     }
-
-    .bullet-block {
-      margin-bottom: 10px;
-    }
-
+    .bullet-block { margin-bottom: 10px; }
     .bullet-prefix {
       color: var(--accent);
       margin-right: 4px;
     }
-
     .tag-list {
       margin-top: 4px;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    @media (min-width: 768px) {
-      .container {
-        padding-top: 48px;
+    @media (max-width: 600px) {
+      .container { padding-top: 16px; }
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-photo {
+        align-self: center;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>Your Name</h1>
-      <p>Short tagline – e.g., M.S. Artificial Intelligence · Telecommunications & Networking · Machine Learning</p>
-      <p>
-        <a href="mailto:you@example.com">you@example.com</a> ·
-        <a href="https://github.com/yourusername">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
-      </p>
-    </header>
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- About / Intro -->
+    <!-- Hero with picture + basic info -->
+    <section class="hero">
+      <div class="hero-photo">
+        <!-- Replace profile.jpg with your actual image file -->
+        <img src="leacv.jpeg" alt="Lawrence ">
+      </div>
+      <div class="hero-text">
+        <h1>Lawrence A. Egharevba</h1>
+        <p>M.S. Artificial Intelligence · M.S. Telecommunications & Networking</p>
+        <p>
+          <a href="mailto:asemotalea@gmail.com">you@example.com</a> ·
+          <a href="https://github.com/Leamota">GitHub</a> ·
+          <a href="https://leamota.github.io">Website</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
     <section class="section">
       <div class="section-title">About</div>
       <p>
-        Hi! I am [Your Name], [your current status, e.g., PhD student / ML Engineer / recent M.S. AI graduate].
-        I previously completed an M.S. in Telecommunications and Networking and recently finished an M.S. in
-        Artificial Intelligence. My interests include machine learning, data science, computer vision, and
-        applied AI for networks and educational data.
+        Hi! I am [Lawrence Asemota Egharevba], a [PhD applicant / ML engineer / M.S. AI graduate] with a background in
+        Telecommunications and Networking and Artificial Intelligence. My interests include machine
+        learning, computer vision, learning analytics, and AI for intelligent networks.
       </p>
     </section>
 
-    <!-- Research / Interests -->
-    <section class="section">
-      <div class="section-title">Research Interests</div>
-      <p>
-        Broadly interested in machine learning and its applications to computer vision, learning analytics,
-        and intelligent networking. Current interests include:
-      </p>
-      <ul>
-        <li>Learning analytics and prediction of at-risk students using feature engineering and ML</li>
-        <li>Computer vision and deep learning for image understanding and reconstruction</li>
-        <li>AI for networking and telecommunications (traffic prediction, anomaly detection, automation)</li>
-      </ul>
-    </section>
-
-    <!-- Experience-style bullets like the example site -->
+    <!-- Highlights / bullets -->
     <section class="section">
       <div class="section-title">Highlights</div>
 
       <div class="bullet-block">
         <span class="bullet-prefix">▷</span>
-        Completed an M.S. in Artificial Intelligence with A-level performance in core courses including
-        Computer Vision, Natural Language Processing, AI & Machine Learning in Production, Data Mining and
-        Machine Learning, and Social Networks/Big Data Analytics.
-        <div class="tag-list">
-          AI · Machine Learning · Data Mining · NLP · Computer Vision
-        </div>
+        Completed an M.S. in Artificial Intelligence with strong performance in Computer Vision, NLP,
+        AI & ML in Production, Data Mining and Machine Learning, and Social Networks/Big Data Analytics.
+        <div class="tag-list">AI · Machine Learning · NLP · Computer Vision · Big Data</div>
       </div>
 
       <div class="bullet-block">
         <span class="bullet-prefix">▷</span>
-        Previously earned an M.S. in Telecommunications and Networking, building a strong foundation in
-        network protocols, wireless communication, and network security, which complements my AI background.
-        <div class="tag-list">
-          Telecommunications · Networking · Network Security
-        </div>
+        Earned an M.S. in Telecommunications and Networking, providing a solid foundation in network
+        protocols, wireless systems, and network security.
+        <div class="tag-list">Telecommunications · Networking · Network Security</div>
       </div>
 
       <div class="bullet-block">
         <span class="bullet-prefix">▷</span>
-        Research and project experience in applying machine learning to student performance prediction,
-        social network/big data analytics, and AI-driven automation.
-        <div class="tag-list">
-          Learning Analytics · Big Data · Predictive Modeling
-        </div>
+        Project and research experience in student performance prediction, social network analytics,
+        and applied ML for real-world data.
+        <div class="tag-list">Learning Analytics · Data Mining · Predictive Modeling</div>
       </div>
-
-      <div class="bullet-block">
-        <span class="bullet-prefix">▷</span>
-        Comfortable with Python, PyTorch, data pipelines, and deploying models in production-style
-        environments using modern MLOps practices.
-        <div class="tag-list">
-          Python · PyTorch · Data Science · MLOps
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section">
-      <div class="section-title">Selected Projects</div>
-
-      <div class="bullet-block">
-        <strong>Next-term student performance prediction</strong><br />
-        Built machine learning models with engineered features from student records to identify at-risk
-        students for early intervention.
-        <div class="tag-list">
-          Learning Analytics · Feature Engineering · Classification
-        </div>
-      </div>
-
-      <div class="bullet-block">
-        <strong>Computer vision project</strong><br />
-        Implemented deep learning models for image classification / reconstruction, exploring feature
-        extraction from intermediate network layers.
-        <div class="tag-list">
-          Computer Vision · Deep Learning · PyTorch
-        </div>
-      </div>
-
-      <div class="bullet-block">
-        <strong>AI for networking</strong><br />
-        Explored predictive modeling or anomaly detection using network/telecom data to showcase the
-        blend of networking and AI.
-        <div class="tag-list">
-          Networking · Time Series · Anomaly Detection
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer / Misc -->
-    <section class="section">
-      <div class="section-title">Contact & Links</div>
-      <p>
-        Email: <a href="mailto:you@example.com">you@example.com</a><br />
-        GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-        LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a>
-      </p>
     </section>
   </div>
 </body>
