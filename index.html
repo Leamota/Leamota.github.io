@@ -1,91 +1,221 @@
+xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Your Name — Academic Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; color: #222; }
-    header { text-align: center; padding: 3rem 1rem; background: #0366d6; color: white; }
-    header img { width: 180px; border-radius: 50%; border: 4px solid white; }
-    nav { position: sticky; top: 0; background: #024ea2; padding: 0.8rem; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: auto; padding: 2rem; }
-    h2 { color: #0366d6; margin-top: 2rem; }
-    .list { list-style: none; padding: 0; }
-    .list li { margin-bottom: 0.5rem; }
-    .label { font-weight: 600; }
-    footer { text-align: center; padding: 2rem; background: #0366d6; color: white; margin-top: 3rem; }
+    :root {
+      --bg: #f7f7f7;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --accent: #0077cc;
+      --muted: #666666;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px 20px 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .bullet-block {
+      margin-bottom: 10px;
+    }
+
+    .bullet-prefix {
+      color: var(--accent);
+      margin-right: 4px;
+    }
+
+    .tag-list {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-top: 48px;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <header>
-    <img src="leacv.jpeg" alt="Lawrence A. Egharevba">
-    <h1>Lawrence Asemota Egharevba</h1>
-    <p>Computer Vision & AI Researcher | Robust, Ethical, Scalable ML Systems</p>
-    <p>Affiliation • Position • Location</p>
-  </header>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#highlights">Highlights</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#industry">Industry</a>
-    <a href="#talks">Talks</a>
-    <a href="#education">Education</a>
-    <a href="#service">Service</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- Content -->
   <div class="container">
-    <section id="about">
-      <h2>About</h2>
-      <p>I am a researcher focused on computer vision and artificial intelligence, developing methods that are robust, ethical, and scalable...</p>
+    <!-- Header -->
+    <header>
+      <h1>Your Name</h1>
+      <p>Short tagline – e.g., M.S. Artificial Intelligence · Telecommunications & Networking · Machine Learning</p>
+      <p>
+        <a href="mailto:you@example.com">you@example.com</a> ·
+        <a href="https://github.com/yourusername">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
+      </p>
+    </header>
+
+    <!-- About / Intro -->
+    <section class="section">
+      <div class="section-title">About</div>
+      <p>
+        Hi! I am [Your Name], [your current status, e.g., PhD student / ML Engineer / recent M.S. AI graduate].
+        I previously completed an M.S. in Telecommunications and Networking and recently finished an M.S. in
+        Artificial Intelligence. My interests include machine learning, data science, computer vision, and
+        applied AI for networks and educational data.
+      </p>
     </section>
 
-    <section id="research">
-      <h2>Research Interests</h2>
-      <ul class="list">
-        <li><span class="label">Core areas:</span> Computer vision, deep learning, multimodal learning</li>
-        <li><span class="label">Methods:</span> Representation learning, self-supervised learning, causal inference</li>
-        <li><span class="label">Systems:</span> Robust ML, fairness and accountability, scalable deployment</li>
-        <li><span class="label">Applications:</span> Medical imaging, autonomous systems, remote sensing</li>
+    <!-- Research / Interests -->
+    <section class="section">
+      <div class="section-title">Research Interests</div>
+      <p>
+        Broadly interested in machine learning and its applications to computer vision, learning analytics,
+        and intelligent networking. Current interests include:
+      </p>
+      <ul>
+        <li>Learning analytics and prediction of at-risk students using feature engineering and ML</li>
+        <li>Computer vision and deep learning for image understanding and reconstruction</li>
+        <li>AI for networking and telecommunications (traffic prediction, anomaly detection, automation)</li>
       </ul>
     </section>
 
-    <section id="publications">
-      <h2>Selected Publications</h2>
-      <ul class="list">
-        <li><span class="label">Paper:</span> Title (Year) — Authors — Venue — <a href="#">Link</a></li>
-        <li><span class="label">Preprint:</span> Title (Year) — arXiv — <a href="#">Link</a></li>
-      </ul>
+    <!-- Experience-style bullets like the example site -->
+    <section class="section">
+      <div class="section-title">Highlights</div>
+
+      <div class="bullet-block">
+        <span class="bullet-prefix">▷</span>
+        Completed an M.S. in Artificial Intelligence with A-level performance in core courses including
+        Computer Vision, Natural Language Processing, AI & Machine Learning in Production, Data Mining and
+        Machine Learning, and Social Networks/Big Data Analytics.
+        <div class="tag-list">
+          AI · Machine Learning · Data Mining · NLP · Computer Vision
+        </div>
+      </div>
+
+      <div class="bullet-block">
+        <span class="bullet-prefix">▷</span>
+        Previously earned an M.S. in Telecommunications and Networking, building a strong foundation in
+        network protocols, wireless communication, and network security, which complements my AI background.
+        <div class="tag-list">
+          Telecommunications · Networking · Network Security
+        </div>
+      </div>
+
+      <div class="bullet-block">
+        <span class="bullet-prefix">▷</span>
+        Research and project experience in applying machine learning to student performance prediction,
+        social network/big data analytics, and AI-driven automation.
+        <div class="tag-list">
+          Learning Analytics · Big Data · Predictive Modeling
+        </div>
+      </div>
+
+      <div class="bullet-block">
+        <span class="bullet-prefix">▷</span>
+        Comfortable with Python, PyTorch, data pipelines, and deploying models in production-style
+        environments using modern MLOps practices.
+        <div class="tag-list">
+          Python · PyTorch · Data Science · MLOps
+        </div>
+      </div>
     </section>
 
-    <!-- Repeat for Highlights, Teaching, Industry, Talks, Education, Service -->
+    <!-- Projects -->
+    <section class="section">
+      <div class="section-title">Selected Projects</div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="list">
-        <li><span class="label">Email:</span> you@domain.com</li>
-        <li><span class="label">Website:</span> https://yoursite.com</li>
-        <li><span class="label">GitHub:</span> https://github.com/username</li>
-        <li><span class="label">LinkedIn:</span> https://linkedin.com/in/username</li>
-      </ul>
+      <div class="bullet-block">
+        <strong>Next-term student performance prediction</strong><br />
+        Built machine learning models with engineered features from student records to identify at-risk
+        students for early intervention.
+        <div class="tag-list">
+          Learning Analytics · Feature Engineering · Classification
+        </div>
+      </div>
+
+      <div class="bullet-block">
+        <strong>Computer vision project</strong><br />
+        Implemented deep learning models for image classification / reconstruction, exploring feature
+        extraction from intermediate network layers.
+        <div class="tag-list">
+          Computer Vision · Deep Learning · PyTorch
+        </div>
+      </div>
+
+      <div class="bullet-block">
+        <strong>AI for networking</strong><br />
+        Explored predictive modeling or anomaly detection using network/telecom data to showcase the
+        blend of networking and AI.
+        <div class="tag-list">
+          Networking · Time Series · Anomaly Detection
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Misc -->
+    <section class="section">
+      <div class="section-title">Contact & Links</div>
+      <p>
+        Email: <a href="mailto:you@example.com">you@example.com</a><br />
+        GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+        LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a>
+      </p>
     </section>
   </div>
-
-  <!-- Footer -->
-  <footer>
-    © 2025 Your Name — Built with GitHub Pages
-  </footer>
-
 </body>
 </html>
+
+
 
