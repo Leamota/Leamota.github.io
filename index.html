@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <meta charset="UTF-8" />
   <title>Lawrence A. Egharevba</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     :root {
       --bg: #f7f7f7;
@@ -16,7 +16,11 @@
       --muted: #666666;
       --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -24,13 +28,14 @@
       font-family: var(--font-main);
       line-height: 1.6;
     }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 24px 16px 48px;
     }
 
-    /* Top navigation */
+    /* Top navigation (kept, but you could replace with internal anchors later) */
     nav {
       display: flex;
       justify-content: flex-end;
@@ -38,11 +43,16 @@
       margin-bottom: 24px;
       font-size: 0.95rem;
     }
+
     nav a {
       color: var(--muted);
       text-decoration: none;
     }
-    nav a:hover { color: var(--accent); }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
     nav a.active {
       color: var(--accent);
       font-weight: 600;
@@ -60,9 +70,10 @@
       background: var(--card-bg);
       border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
       text-align: center;
     }
+
     .sidebar img {
       width: 160px;
       height: 160px;
@@ -71,25 +82,26 @@
       border: 3px solid #e0e0e0;
       margin-bottom: 12px;
     }
+
     .sidebar h1 {
       margin: 0 0 4px;
       font-size: 1.5rem;
     }
+
     .sidebar p {
       margin: 2px 0;
       font-size: 0.95rem;
       color: var(--muted);
     }
 
-
     .sidebar-links {
       margin-top: 10px;
       font-size: 0.92rem;
-      text-align: center; /* optional */
+      text-align: center;
     }
 
     .sidebar-links a {
-      display: inline-block;   /* key: makes them line up horizontally */
+      display: inline-block;
       margin: 0 6px;
       font-size: 1.3rem;
       color: var(--accent);
@@ -99,73 +111,76 @@
       color: #005999;
     }
 
-
-          /* Stronger visual separation between sections */
-      .main .section {
-        background: var(--card-bg);
-        border-radius: 10px;
-        padding: 24px 24px 16px;
-        margin-bottom: 24px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        border-left: 4px solid var(--accent);
-      }
-
-      /* Make section titles more obvious */
-      .section-title {
-        font-weight: 700;
-        font-size: 1.15rem;
-        margin-bottom: 10px;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-
-      /* Smooth scroll when clicking sidebar links */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Optional: add a bit more vertical spacing between groups */
-      #education { margin-top: 8px; }
-
-
-
-    /* Main content */
+    /* Main content sections – stronger visual separation */
     .main .section {
       background: var(--card-bg);
-      border-radius: 8px;
-      padding: 20px 20px 8px;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 24px 24px 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid var(--accent);
     }
+
     .section-title {
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
-    .bullet-block { margin-bottom: 10px; }
+
+    .bullet-block {
+      margin-bottom: 10px;
+    }
+
     .bullet-prefix {
       color: var(--accent);
       margin-right: 4px;
     }
+
     .tag-list {
       margin-top: 4px;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* Skills grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin-top: 8px;
+    }
+
+    .skill-item::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Smooth scroll if you later convert nav to internal links */
+    html {
+      scroll-behavior: smooth;
+    }
 
     @media (max-width: 800px) {
       .layout {
         grid-template-columns: 1fr;
       }
+
       .sidebar {
         text-align: center;
       }
-
-
-
     }
   </style>
 </head>
@@ -174,27 +189,21 @@
     <!-- Navigation -->
     <nav>
       <a href="index.html" class="active">Home</a>
-      
       <a href="research.html">Research</a>
       <a href="education.html">Education</a>
-       <a href="projects.html">Projects</a>
-      
-      
+      <a href="projects.html">Projects</a>
       <a href="skills.html">Skills</a>
-      
       <a href="contact.html">Contact</a>
     </nav>
 
     <div class="layout">
       <!-- Sidebar: picture + short bio -->
       <aside class="sidebar">
-        <!-- Replace profile.jpg with your file -->
         <img src="leacv.jpeg" alt="Lawrence">
         <h1>Lawrence Asemota Egharevba</h1>
         <p>M.S. Artificial Intelligence</p>
-        <p>M.S. Telecommunications & Networking</p>
+        <p>M.S. Telecommunications &amp; Networking</p>
         <p>Machine Learning · Computer Vision · Data Analytics</p>
-        
 
         <div class="sidebar-links">
           <a href="mailto:asemotalea@gmail.com" title="Email">
@@ -210,82 +219,74 @@
             <i class="fa-solid fa-globe"></i>
           </a>
         </div>
-
-          <!-- Add Google Scholar, CV PDF, etc. if you want -->
-        
       </aside>
 
       <!-- Main content -->
       <main class="main">
-        <section class="section">
+        <!-- ABOUT -->
+        <section class="section" id="about">
           <div class="section-title">About Me</div>
-         
           <p>
-            I am a results‑driven data scientist with dual master’s degrees in 
-            <strong>Telecommunications & Networking</strong> and 
-            <strong>Artificial Intelligence</strong>, combining expertise in data mining, statistical modeling, and end‑to‑end predictive analytics.
+            I am a results‑driven data scientist with dual master’s degrees in
+            <strong>Telecommunications &amp; Networking</strong> and
+            <strong>Artificial Intelligence</strong>, combining expertise in data mining,
+            statistical modeling, and end‑to‑end predictive analytics.
           </p>
           <p>
-            My academic path began with advanced training in networking systems, then evolved into a deep specialization in artificial intelligence, equipping me to tackle complex challenges in 
-            <strong>computer vision</strong> and 
+            My academic path began with advanced training in networking systems, then evolved into
+            a deep specialization in artificial intelligence, equipping me to tackle complex
+            challenges in <strong>computer vision</strong> and
             <strong>image‑focused deep learning</strong>.
           </p>
           <p>
-            After contributing to AI‑driven computer vision projects at the 
-            <strong>High Performance Database Research Center (HPDRC) Florida International University (FIU)</strong>, I pursued my M.S. in Artificial Intelligence at 
-            <strong>Florida Atlantic University (FAU)</strong> to strengthen my foundation in modern machine learning.
+            After contributing to AI‑driven computer vision projects at the
+            <strong>High Performance Database Research Center (HPDRC), Florida International
+            University (FIU)</strong>, I pursued my M.S. in Artificial Intelligence at
+            <strong>Florida Atlantic University (FAU)</strong> to strengthen my foundation in
+            modern machine learning.
           </p>
           <p>
-            I am now seeking opportunities to join a 
-            <strong>research lab</strong> where I can apply my skills in building robust models, designing principled workflows, and advancing reproducible AI research with real‑world impact.
+            I am focused on building robust models, designing principled workflows, and advancing
+            reproducible AI research with real‑world impact.
           </p>
-             
-
         </section>
 
-        <section class="section">
+        <!-- HIGHLIGHTS -->
+        <section class="section" id="highlights">
           <div class="section-title">Highlights</div>
 
           <div class="bullet-block">
             <span class="bullet-prefix">▷</span>
-            Completed an M.S. in Artificial Intelligence with strong performance in Computer Vision, NLP,
-            AI & ML in Production, Data Mining and Machine Learning, and Social Networks/Big Data Analytics.
+            Completed an M.S. in Artificial Intelligence with strong performance in Computer Vision,
+            NLP, AI &amp; ML in Production, Data Mining and Machine Learning, and Social
+            Networks/Big Data Analytics.
             <div class="tag-list">AI · Machine Learning · NLP · Computer Vision · Big Data</div>
           </div>
 
           <div class="bullet-block">
             <span class="bullet-prefix">▷</span>
-            Earned an M.S. in Telecommunications and Networking, providing a solid foundation in network protocols,
-            wireless systems, and network security that complements my AI skills.
+            Earned an M.S. in Telecommunications and Networking, providing a solid foundation in
+            network protocols, wireless systems, and network security that complements my AI skills.
             <div class="tag-list">Telecommunications · Networking · Network Security</div>
           </div>
 
           <div class="bullet-block">
             <span class="bullet-prefix">▷</span>
-            Research and project work on learning analytics and next-term prediction of student performance using
-            feature engineering and machine learning models.
+            Research and project work on learning analytics and next-term prediction of student
+            performance using feature engineering and machine learning models.
             <div class="tag-list">Learning Analytics · Feature Engineering · Classification</div>
           </div>
 
           <div class="bullet-block">
             <span class="bullet-prefix">▷</span>
-            Experienced with Python, PyTorch, data pipelines, and deploying models in production-style environments.
+            Experienced with Python, PyTorch, data pipelines, and deploying models in
+            production-style environments.
             <div class="tag-list">Python · PyTorch · Data Science · MLOps</div>
           </div>
         </section>
 
-
-        <section class="section" id="education">
-          <div class="section-title">Research</div>
-          <!-- education content -->
-          <ul>
-            <li>Learning analytics and predicting at-risk students using feature-based ML models</li>
-            <li>Computer vision and deep learning for image understanding and reconstruction</li>
-            <li>AI for telecommunications and networking (optimization, anomaly detection, automation)</li>
-          </ul>
-        </section>
-
-        <section class="section">
+        <!-- RESEARCH INTERESTS -->
+        <section class="section" id="research">
           <div class="section-title">Research Interests</div>
           <ul>
             <li>Learning analytics and predicting at-risk students using feature-based ML models</li>
@@ -293,7 +294,9 @@
             <li>AI for telecommunications and networking (optimization, anomaly detection, automation)</li>
           </ul>
         </section>
-        <section class="section">
+
+        <!-- ONGOING / PAST WORK -->
+        <section class="section" id="projects">
           <div class="section-title">Ongoing / Past Work</div>
 
           <div class="bullet-block">
@@ -305,10 +308,11 @@
 
           <div class="bullet-block">
             <strong>Computer vision for image analysis</strong><br />
-            Implemented and evaluated deep neural networks for image classification and feature-based
-            reconstruction using modern vision architectures.
+            Implemented and evaluated deep neural networks for image classification and
+            feature-based reconstruction using modern vision architectures.
             <div class="tag-list">Computer Vision · Deep Learning · PyTorch</div>
           </div>
+
           <div class="bullet-block">
             <strong>AI for network data</strong><br />
             Explored applications of ML to network traffic and telecom data, focusing on prediction
@@ -317,86 +321,80 @@
           </div>
         </section>
 
-        <section class="section" id="skills">
+        <!-- EDUCATION -->
+        <section class="section" id="education">
           <div class="section-title">Education</div>
-           <strong>MASTER OF SCIENCE (M.S.) IN ARTIFICIAL INTELLIGENCE</strong>
-              <p><strong>G.P.A:</strong> 4.0</p>
-              <p>Dec 2025 | Florida Atlantic University — Boca Raton, F</p>
-              <strong>Relevant Coursework</strong>
-              <ul>
-                <ul>
-                <li>AI and Machine Learning Production</li>
-                <li>Data Mining and Machine Learning</li>
-                <li>Natural Language Processing</li>
-                <li>Social Networks / Big Data Analytics</li>
-                <li>Computational Foundations AI</li>
-                <li>Information Retrieval</li>
-                <li>AI, Data Science, Cybersecurity and Ethics</li>
-                <li>Design of Digital Systems and Lab</li>
-                <li>Information Retrieval</li>
-                <li>Computer Vision</li>
-              </ul>
+
+          <div class="bullet-block">
+            <strong>MASTER OF SCIENCE (M.S.) IN ARTIFICIAL INTELLIGENCE</strong><br />
+            <strong>GPA:</strong> 4.0<br />
+            Dec 2025 | Florida Atlantic University — Boca Raton, FL
+            <br /><br />
+            <strong>Relevant Coursework</strong>
+            <ul>
+              <li>AI and Machine Learning Production</li>
+              <li>Data Mining and Machine Learning</li>
+              <li>Natural Language Processing</li>
+              <li>Social Networks / Big Data Analytics</li>
+              <li>Computational Foundations of AI</li>
+              <li>Information Retrieval</li>
+              <li>AI, Data Science, Cybersecurity and Ethics</li>
+              <li>Design of Digital Systems and Lab</li>
+              <li>Computer Vision</li>
+            </ul>
           </div>
 
-
-          <div class="edu-card">
-            <strong>MASTER OF SCIENCE (M.S.) IN TELECOMMUNICATIONS AND NETWORKING</strong>
-              <p><strong>G.P.A:</strong> 3.74</p>
-              <p>Apr 2021 | Florida International University — Miami, FL</p>
-              <strong>Relevant Coursework</strong>
-              <ul>
-                <li>Operating Systems</li>
-                <li>Social Economic Policy and Aspect of Cybersecurity</li>
-                <li>Analysis of Algorithms</li>
-                <li>Theory of Computation</li>
-                <li>Principles of Database Management Systems</li>
-                <li>Mobile Computing</li>
-                <li>Telecommunications Enterprise Planning and Strategy</li>
-                <li>Secure Telecommunications</li>
-                <li>Industry Development of Telecommunications</li>
-                <li>Computer Communication Network Technology</li>
-              </ul>
+          <div class="bullet-block">
+            <strong>MASTER OF SCIENCE (M.S.) IN TELECOMMUNICATIONS AND NETWORKING</strong><br />
+            <strong>GPA:</strong> 3.74<br />
+            Apr 2021 | Florida International University — Miami, FL
+            <br /><br />
+            <strong>Relevant Coursework</strong>
+            <ul>
+              <li>Operating Systems</li>
+              <li>Social Economic Policy and Aspect of Cybersecurity</li>
+              <li>Analysis of Algorithms</li>
+              <li>Theory of Computation</li>
+              <li>Principles of Database Management Systems</li>
+              <li>Mobile Computing</li>
+              <li>Telecommunications Enterprise Planning and Strategy</li>
+              <li>Secure Telecommunications</li>
+              <li>Industry Development of Telecommunications</li>
+              <li>Computer Communication Network Technology</li>
+            </ul>
           </div>
-
-          <!-- skills content -->
         </section>
 
-        <section class="section" id="projects">
-          <div class="section-title">Projects</div>
-          <!-- research content -->
-        </section>
-
+        <!-- SKILLS -->
         <section class="section" id="skills">
           <div class="section-title">Skills</div>
-
-            <span class="skill-item">Data Mining & Machine Learning</span>
+          <div class="skills-grid">
+            <span class="skill-item">Data Mining &amp; Machine Learning</span>
             <span class="skill-item">Social Networks / Big Data Analytics</span>
             <span class="skill-item">Natural Language Processing (NLP)</span>
             <span class="skill-item">Computer Vision</span>
             <span class="skill-item">AI and ML in Production</span>
-            <span class="skill-item">Model Evaluation & Feature Engineering</span>
+            <span class="skill-item">Model Evaluation &amp; Feature Engineering</span>
             <span class="skill-item">AI, Data Science, Cybersecurity, and Ethics</span>
-            <span class="skill-item">Information Retrieval & Management Systems</span>
+            <span class="skill-item">Information Retrieval &amp; Management Systems</span>
             <span class="skill-item">Digital Systems Design</span>
-            <span class="skill-item">Maintenance & Deployment of Intelligent Systems</span>
+            <span class="skill-item">Maintenance &amp; Deployment of Intelligent Systems</span>
           </div>
-          <!-- experience content -->
         </section>
 
+        <!-- CONTACT -->
         <section class="section" id="contact">
           <div class="section-title">Contact</div>
-          <!-- contact content -->
           <p>
-            For collaborations, research discussions, or professional inquiries, feel free to reach out using
-            the contact details below.
+            For collaborations, research discussions, or professional inquiries, feel free to reach
+            out using the contact details below.
           </p>
-          <p><strong>Email:</strong>
+          <p>
+            <strong>Email:</strong>
             <a href="mailto:asemotalea@gmail.com">asemotalea@gmail.com</a>
           </p>
           <p><strong>Location:</strong> Miami, FL 33196</p>
         </section>
-
-
       </main>
     </div>
   </div>
