@@ -1,226 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lawrence Egharevba – Contact</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <style>
-      :root {
-        --bg: #f7f7f7;
-        --card-bg: #ffffff;
-        --text: #222222;
-        --accent: #0077cc;
-        --muted: #666666;
-        --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>Lawrence Egharevba – Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f7f7f7;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --accent: #0077cc;
+      --muted: #666666;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    /* Top navigation */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
 
-      * {
-        box-sizing: border-box;
-      }
+    /* Two-column layout (same as index) */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+    }
 
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--font-main);
-        line-height: 1.6;
-      }
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .sidebar img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e0e0e0;
+      margin-bottom: 12px;
+    }
+    .sidebar h1 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
+    }
+    .sidebar p {
+      margin: 2px 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .sidebar-links {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+    .sidebar-links a {
+      display: inline-block;
+      margin: 0 6px;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+    .sidebar-links a:hover {
+      color: #005999;
+    }
 
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 24px 16px 48px;
-      }
+    /* Main content */
+    .main .section {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px 20px 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-      /* Top navigation */
-      nav {
-        display: flex;
-        justify-content: flex-end;
-        gap: 16px;
-        margin-bottom: 24px;
-        font-size: 0.95rem;
-      }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-      nav a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-
-      nav a:hover {
-        color: var(--accent);
-      }
-
-      nav a.active {
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      /* Two-column layout (same as index) */
+    @media (max-width: 800px) {
       .layout {
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        gap: 24px;
+        grid-template-columns: 1fr;
       }
-
-      /* Sidebar */
       .sidebar {
-        background: var(--card-bg);
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         text-align: center;
       }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
 
-      .sidebar img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #e0e0e0;
-        margin-bottom: 12px;
-      }
+    <div class="layout">
+      <!-- Sidebar (reuse same picture and icons as index) -->
+      <aside class="sidebar">
+        <img src="leacv.jpeg" alt="Your Name">
+        <h1>Lawrence A. Egharevba</h1>
+        <p>Data Scientist · Artificial Intelligence</p>
+        <p>Miami, FL 33196</p>
+        <div class="sidebar-links">
+          <!-- Email icon (mailto) -->
+          <a href="mailto:asemotalea@gmail.com" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <!-- Add your GitHub / LinkedIn URLs here -->
+          <a href="https://github.com/Leamota" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </aside>
 
-      .sidebar h1 {
-        margin: 0 0 4px;
-        font-size: 1.5rem;
-      }
-
-      .sidebar p {
-        margin: 2px 0;
-        font-size: 0.95rem;
-        color: var(--muted);
-      }
-
-      .sidebar-links {
-        margin-top: 10px;
-        font-size: 0.92rem;
-        text-align: center;
-      }
-
-      .sidebar-links a {
-        display: inline-block;
-        margin: 0 6px;
-        font-size: 1.3rem;
-        color: var(--accent);
-      }
-
-      .sidebar-links a:hover {
-        color: #005999;
-      }
-
-      /* Main content */
-      .main .section {
-        background: var(--card-bg);
-        border-radius: 8px;
-        padding: 20px 20px 8px;
-        margin-bottom: 16px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-      }
-
-      .section-title {
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .map-container {
-        max-width: 500px;
-        margin: 0 auto 40px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      }
-
-      @media (max-width: 800px) {
-        .layout {
-          grid-template-columns: 1fr;
-        }
-
-        .sidebar {
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Navigation -->
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-
-      <div class="layout">
-        <!-- Sidebar (reuse same picture and icons as index) -->
-        <aside class="sidebar">
-          <img src="leacv.jpeg" alt="Your Name" />
-          <h1>Lawrence A. Egharevba</h1>
-          <p>Data Scientist · Artificial Intelligence</p>
-          <p>Miami, FL 33196</p>
-          <div class="sidebar-links">
-            <!-- Email icon (mailto) -->
-            <a href="mailto:asemotalea@gmail.com" title="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-            <!-- GitHub / LinkedIn -->
-            <a href="https://github.com/Leamota" target="_blank" title="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yourprofile"
-              target="_blank"
-              title="LinkedIn"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
-        </aside>
-
-        <!-- Main contact details -->
-        <main class="main">
-          <section class="section">
-            <div class="section-title">Contact</div>
-            <p>
-              For collaborations, research discussions, or professional inquiries, feel
-              free to reach out using the contact details below.
-            </p>
-            <p>
-              <strong>Email:</strong>
-              <a href="mailto:asemotalea@gmail.com">asemotalea@gmail.com</a>
-            </p>
-            <p><strong>Location:</strong> Miami, FL 33196</p>
-          </section>
-        </main>
-      </div>
+      <!-- Main contact details -->
+      <main class="main">
+        <section class="section">
+          <div class="section-title">Contact</div>
+          <p>
+            For collaborations, research discussions, or professional inquiries, feel free to reach out using
+            the contact details below.
+          </p>
+          <p><strong>Email:</strong>
+            <a href="mailto:asemotalea@gmail.com">asemotalea@gmail.com</a>
+          </p>
+          <p><strong>Location:</strong> Miami, FL 33196</p>
+        </section>
+      </main>
     </div>
-
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE_HERE"
-        width="100%"
-        height="350"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      >
-      </iframe>
-    </div>
-  </body>
+  </div>
+</body>
 </html>
+
