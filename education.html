@@ -2,25 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Education</title>
+  <title>Lawrence A. Egharevba – Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    /* Internal CSS goes here */
+    :root {
+      --bg: #f7f7f7;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --accent: #0077cc;
+      --muted: #666666;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      background: #f9f9f9;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
     }
 
-    #education h2 {
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    /* Top navigation */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Two-column layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
       text-align: center;
-      font-size: 2rem;
-      color: #0366d6;
-      margin-bottom: 2rem;
     }
 
+    .sidebar img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e0e0e0;
+      margin-bottom: 12px;
+    }
+
+    .sidebar h1 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
+    }
+
+    .sidebar p {
+      margin: 2px 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .sidebar-links {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .sidebar-links a {
+      display: inline-block;
+      margin: 0 6px;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .sidebar-links a:hover {
+      color: #005999;
+    }
+
+    /* Main content */
+    .main .section {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 24px 24px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      text-align: left;
+    }
+
+    /* Education grid/cards */
     .education-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* two equal columns */
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
@@ -28,12 +138,12 @@
       background: #fff;
       padding: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
 
     .edu-card h3 {
       color: #024ea2;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 0.5rem;
     }
 
@@ -52,55 +162,106 @@
     .edu-card li {
       margin-bottom: 0.4rem;
     }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive: stack columns */
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="education.html" class="active">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-<section id="education">
-  <h2>Education</h2>
-  <div class="education-grid">
-    
-    <div class="edu-card">
-      <h3>MASTER OF SCIENCE (M.S.) IN ARTIFICIAL INTELLIGENCE</h3>
-      <p><strong>G.P.A:</strong> 4.0</p>
-      <p>Dec 2025 | Florida Atlantic University — Boca Raton, FL</p>
-      <h4>Relevant Coursework</h4>
-      <ul>
-        <li>AI and Machine Learning Production</li>
-        <li>Data Mining and Machine Learning</li>
-        <li>Natural Language Processing</li>
-        <li>Social Networks / Big Data Analytics</li>
-        <li>Computational Foundations AI</li>
-        <li>Information Retrieval</li>
-        <li>AI, Data Science, Cybersecurity and Ethics</li>
-        <li>Design of Digital Systems and Lab</li>
-        <li>Information Retrieval</li>
-        <li>Computer Vision</li>
-      </ul>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <img src="leacv.jpeg" alt="Lawrence A. Egharevba">
+        <h1>Lawrence A. Egharevba</h1>
+        <p>Data Scientist ·  Artificial Intelligence</p>
+        <p>Miami, FL 33196</p>
+        
+        <div class="sidebar-links">
+          <a href="mailto:asemotalea@gmail.com" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/Leamota" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main education content -->
+      <main class="main">
+        <section class="section" id="education">
+          <div class="section-title">Education</div>
+          <div class="education-grid">
+            <div class="edu-card">
+              <h3>MASTER OF SCIENCE (M.S.) IN ARTIFICIAL INTELLIGENCE</h3>
+              <p><strong>G.P.A:</strong> 4.0</p>
+              <p>Dec 2025 | Florida Atlantic University — Boca Raton, FL</p>
+              <h4>Relevant Coursework</h4>
+              <ul>
+                <li>AI and Machine Learning Production</li>
+                <li>Data Mining and Machine Learning</li>
+                <li>Natural Language Processing</li>
+                <li>Social Networks / Big Data Analytics</li>
+                <li>Computational Foundations AI</li>
+                <li>Information Retrieval</li>
+                <li>AI, Data Science, Cybersecurity and Ethics</li>
+                <li>Design of Digital Systems and Lab</li>
+                <li>Computer Vision</li>
+              </ul>
+            </div>
+
+            <div class="edu-card">
+              <h3>MASTER OF SCIENCE (M.S.) IN TELECOMMUNICATIONS AND NETWORKING</h3>
+              <p><strong>G.P.A:</strong> 3.74</p>
+              <p>Apr 2021 | Florida International University — Miami, FL</p>
+              <h4>Relevant Coursework</h4>
+              <ul>
+                <li>Operating Systems</li>
+                <li>Social Economic Policy and Aspect of Cybersecurity</li>
+                <li>Analysis of Algorithms</li>
+                <li>Theory of Computation</li>
+                <li>Principles of Database Management Systems</li>
+                <li>Mobile Computing</li>
+                <li>Telecommunications Enterprise Planning and Strategy</li>
+                <li>Secure Telecommunications</li>
+                <li>Industry Development of Telecommunications</li>
+                <li>Computer Communication Network Technology</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-
-    <div class="edu-card">
-      <h3>MASTER OF SCIENCE (M.S.) IN TELECOMMUNICATIONS AND NETWORKING</h3>
-      <p><strong>G.P.A:</strong> 3.74</p>
-      <p>Apr 2021 | Florida International University — Miami, FL</p>
-      <h4>Relevant Coursework</h4>
-      <ul>
-        <li>Operating Systems</li>
-        <li>Social Economic Policy and Aspect of Cybersecurity</li>
-        <li>Analysis of Algorithms</li>
-        <li>Theory of Computation</li>
-        <li>Principles of Database Management Systems</li>
-        <li>Mobile Computing</li>
-        <li>Telecommunications Enterprise Planning and Strategy</li>
-        <li>Secure Telecommunications</li>
-        <li>Industry Development of Telecommunications</li>
-        <li>Computer Communication Network Technology</li>
-      </ul>
-    </div>
-
   </div>
-</section>
-
 </body>
 </html>
 
