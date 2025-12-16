@@ -1,0 +1,423 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lawrence A. Egharevba – Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <style>
+    :root {
+      --bg: #f7f7f7;
+      --card-bg: #ffffff;
+      --text: #222222;
+      --accent: #0077cc;
+      --muted: #666666;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    /* Top navigation */
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Two-column layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e0e0e0;
+      margin-bottom: 12px;
+    }
+
+    .sidebar h1 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
+    }
+
+    .sidebar p {
+      margin: 2px 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .sidebar-links {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .sidebar-links a {
+      display: inline-block;
+      margin: 0 6px;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .sidebar-links a:hover {
+      color: #005999;
+    }
+
+    /* Main content */
+    .main .section {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 24px 24px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .subsection-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 16px 0 8px;
+    }
+
+    .project-block {
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .tag-list {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      color: #0077cc;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Grid for project cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      padding: 16px 18px;
+    }
+
+    .project-card .project-title {
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <img src="leacv.jpeg" alt="Lawrence A. Egharevba" />
+        <h1>Lawrence A. Egharevba</h1>
+        <p>M.S. Artificial Intelligence</p>
+        <p>M.S. Telecommunications &amp; Networking</p>
+        <p>Machine Learning · Computer Vision · Data Analytics</p>
+        <div class="sidebar-links">
+          <a href="mailto:asemotalea@gmail.com" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/Leamota" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yourprofile"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="main">
+
+        <section class="section" id="projects">
+          <div class="section-title">Projects</div>
+
+          <div class="project-grid">
+
+            <!-- AI / ML -->
+            <article class="project-card">
+              <div class="project-title">Calling, Building, and Securing APIs</div>
+              <p>
+                Developed and secured RESTful APIs with authentication, authorization,
+                input validation, and versioning. Integrated APIs with downstream ML
+                services for reliable data flow.
+              </p>
+              <div class="tag-list">
+                AI/ML · REST APIs · Authentication · Backend Integration
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Kafka for Data Streaming</div>
+              <p>
+                Built scalable Kafka pipelines for real‑time analytics and ML model
+                serving. Configured topics, partitions, and consumer groups for
+                fault‑tolerant streaming.
+              </p>
+              <div class="tag-list">
+                AI/ML · Apache Kafka · Streaming
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Git for Collaborative ML Development</div>
+              <p>
+                Managed ML repositories using structured branching, code reviews, and
+                release tagging. Ensured reproducibility through versioned datasets,
+                configs, and model artifacts.
+              </p>
+              <div class="tag-list">
+                AI/ML · Git · Version Control
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Model Testing with Zeno & LLM‑Driven Test Generation</div>
+              <p>
+                Used Zeno to analyze model performance across slices and failure modes.
+                Leveraged LLMs to generate diverse test prompts and adversarial cases to
+                improve robustness.
+              </p>
+              <div class="tag-list">
+                AI/ML · Zeno · LLMs · Evaluation
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Containerizing ML Services with Docker</div>
+              <p>
+                Containerized ML inference services using Docker and Docker Compose for
+                consistent deployment across local and cloud environments.
+              </p>
+              <div class="tag-list">
+                AI/ML · Docker · MLOps
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Continuous Integration with Jenkins</div>
+              <p>
+                Built Jenkins pipelines to automate linting, testing, and container
+                image builds. Integrated CI checks into pull requests to maintain code
+                quality.
+              </p>
+              <div class="tag-list">
+                AI/ML · Jenkins · CI/CD
+              </div>
+            </article>
+
+            <!-- Data Mining / ML -->
+            <article class="project-card">
+              <div class="project-title">OSHA Highway Injury Analysis (SIR Dataset)</div>
+              <p>
+                Performed exploratory and predictive analysis on OSHA’s Severe Injury
+                Reports dataset to uncover patterns in highway‑related workplace
+                injuries using data‑mining techniques and visualization.
+              </p>
+              <div class="tag-list">
+                Data Mining · OSHA SIR · EDA
+              </div>
+            </article>
+
+            <!-- NLP -->
+            <article class="project-card">
+              <div class="project-title">Mini Chatbot with Hugging Face Transformers</div>
+              <p>
+                Built a lightweight conversational assistant using Transformer models
+                with intent handling, context tracking, and prompt‑based response
+                generation.
+              </p>
+              <div class="tag-list">
+                NLP · Transformers · Chatbot
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Sentiment Analysis with TextBlob and VADER</div>
+              <p>
+                Developed sentiment‑analysis pipelines to classify polarity and
+                subjectivity in user‑generated text. Compared TextBlob and VADER on
+                social‑media‑style datasets.
+              </p>
+              <div class="tag-list">
+                NLP · Sentiment Analysis · VADER
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">POS Tagging and NER with NLTK</div>
+              <p>
+                Applied NLTK to perform part‑of‑speech tagging and named‑entity
+                recognition, supporting downstream tasks such as information extraction.
+              </p>
+              <div class="tag-list">
+                NLP · NLTK · POS · NER
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Sentiment and Emotion Analysis</div>
+              <p>
+                Built fine‑grained sentiment and emotion classifiers combining
+                lexicon‑based features with machine‑learning models to capture nuanced
+                emotional signals.
+              </p>
+              <div class="tag-list">
+                NLP · Emotion Classification · ML
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Text Preprocessing & Document Similarity (NLTK)</div>
+              <p>
+                Built a full NLP preprocessing pipeline using NLTK and computed cosine
+                similarity scores using TF‑IDF vectors to measure semantic relatedness.
+              </p>
+              <div class="tag-list">
+                NLP · NLTK · TF‑IDF · Similarity
+              </div>
+            </article>
+
+            <!-- Computer Vision -->
+            <article class="project-card">
+              <div class="project-title">Input Image Reconstruction from Deep Features</div>
+              <p>
+                Implemented a feature‑inversion pipeline to reconstruct images from
+                intermediate deep‑network representations and analyzed encoding
+                behavior across layers.
+              </p>
+              <div class="tag-list">
+                Computer Vision · Feature Inversion · PyTorch
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-title">Evaluating ResNet‑8 on CIFAR‑10</div>
+              <p>
+                Implemented and trained a compact ResNet‑8 model on CIFAR‑10 to study
+                residual connections in small‑scale architectures and evaluate
+                generalization.
+              </p>
+              <div class="tag-list">
+                Computer Vision · ResNet · CIFAR‑10
+              </div>
+            </article>
+
+            <!-- Data Science / Big Data -->
+            <article class="project-card">
+              <div class="project-title">Spotify Artist Dataset: EDA Report</div>
+              <p>
+                Conducted a comprehensive exploratory analysis of the Spotify Artist
+                Dataset, identifying trends in popularity, genre diversity, and
+                audio‑feature correlations.
+              </p>
+              <div class="tag-list">
+                Data Science · Big Data · Spotify · EDA
+              </div>
+            </article>
+
+          </div>
+        </section>
+  
+      </main>
+    </div>
+  </div>
+</body>
+</html>
